@@ -11,18 +11,24 @@ namespace SignalRClient
         {
 
         }
+        
+        
 
         // Used for testing
         internal BenchmarksEventSource(string eventSourceName)
             : base(eventSourceName)
         {
         }
+        
+        
 
         [Event(1, Level = EventLevel.Informational)]
         public void Measure(string name, long value)
         {
             WriteEvent(1, name, value);
         }
+        
+        
 
         public static void Measure(string name, double value)
         {
@@ -45,6 +51,7 @@ namespace SignalRClient
         {
             WriteEvent(3, name, value);
         }
+        
 
         [Event(5, Level = EventLevel.Informational)]
         public void Metadata(string name, string aggregate, string reduce, string shortDescription, string longDescription, string format)
